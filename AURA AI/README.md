@@ -1,16 +1,95 @@
-# React + Vite
+# AURA AI — Virtual Assistant 🤖
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+AURA AI is an AI-powered virtual assistant built with React and Vite. It provides an interactive interface where users can communicate with an AI assistant using voice input.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- 🎙️ Voice interaction using microphone input
+- 🤖 AI-powered responses using the Google Gemini API
+- 🔊 Voice assistant animations and visual feedback
+- 🎨 Interactive and responsive user interface
+- ⚡ Fast development and build process powered by Vite
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend:** React.js
+- **Build Tool:** Vite
+- **Language:** JavaScript
+- **AI Integration:** Google GenAI SDK
+- **Icons:** React Icons
+- **Styling:** CSS
 
-## Expanding the ESLint configuration
+## 📁 Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```text
+AURA AI/
+├── public/
+├── src/
+│   ├── assets/
+│   ├── context/
+│   ├── App.jsx
+│   ├── App.css
+│   ├── index.css
+│   ├── main.jsx
+│   └── gemini.js
+├── .gitignore
+├── index.html
+├── package.json
+├── package-lock.json
+└── vite.config.js
+```
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/Kanikakhurana18/AI-Virtual-Assistant.git
+```
+
+### 2. Navigate to the Project Folder
+
+```bash
+cd AI-Virtual-Assistant
+cd "AURA AI"
+```
+
+### 3. Install Dependencies
+
+```bash
+npm install
+```
+
+### 4. Configure the API Key
+
+Create a `.env` file inside the `AURA AI` folder and configure your Gemini API key using the environment variable expected by your application.
+
+**Important:** Never commit your `.env` file or expose a private API key in public source code. For a publicly deployed frontend, use a secure backend to protect the API key.
+
+### 5. Start the Development Server
+
+```bash
+npm run dev
+```
+
+Open the local URL displayed in your terminal.
+
+## 🏗️ Build for Production
+
+To create an optimized production build, run:
+
+```bash
+npm run build
+```
+
+The generated production files will be available in the `dist/` directory.
+
+## 👩‍💻 Author
+
+**Kanika Khurana**
+
+GitHub: [@Kanikakhurana18](https://github.com/Kanikakhurana18)
+
+## 📄 License
+
+This project is available for learning and portfolio purposes. Add a license file if you choose to distribute it under a specific open-source license.
