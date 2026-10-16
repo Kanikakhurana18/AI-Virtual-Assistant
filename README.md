@@ -1,14 +1,18 @@
 # AURA AI — Virtual Assistant 🤖
 
-AURA AI is an AI-powered virtual assistant built with React and Vite. It provides an interactive interface where users can communicate with an AI assistant using voice input.
+AURA AI is an AI-powered virtual assistant built using React.js and Vite. It provides an interactive interface for voice-based interaction and AI-generated responses powered by the Google Gemini API.
 
 ## ✨ Features
 
 - 🎙️ Voice interaction using microphone input
-- 🤖 AI-powered responses using the Google Gemini API
-- 🔊 Voice assistant animations and visual feedback
-- 🎨 Interactive and responsive user interface
-- ⚡ Fast development and build process powered by Vite
+- 🤖 AI-generated responses using the Google Gemini API
+- 🔊 Speech synthesis and voice assistant animations
+- 🎨 Interactive user interface with visual feedback
+- ⚡ Fast development and optimized production builds using Vite
+
+## 🌐 Live Demo
+
+**Live Website:** https://ai-virtual-assistant-nine.vercel.app/
 
 ## 🛠️ Tech Stack
 
@@ -18,11 +22,13 @@ AURA AI is an AI-powered virtual assistant built with React and Vite. It provide
 - **AI Integration:** Google GenAI SDK
 - **Icons:** React Icons
 - **Styling:** CSS
+- **Deployment:** Vercel
+- **Version Control:** Git and GitHub
 
 ## 📁 Project Structure
 
 ```text
-AURA AI/
+AI-Virtual-Assistant/
 ├── public/
 ├── src/
 │   ├── assets/
@@ -39,6 +45,8 @@ AURA AI/
 └── vite.config.js
 ```
 
+*Note: The structure above is illustrative. Your actual folders and files may differ.*
+
 ## 🚀 Getting Started
 
 ### 1. Clone the Repository
@@ -47,11 +55,10 @@ AURA AI/
 git clone https://github.com/Kanikakhurana18/AI-Virtual-Assistant.git
 ```
 
-### 2. Navigate to the Project Folder
+### 2. Navigate to the Project Directory
 
 ```bash
 cd AI-Virtual-Assistant
-cd "AURA AI"
 ```
 
 ### 3. Install Dependencies
@@ -60,11 +67,17 @@ cd "AURA AI"
 npm install
 ```
 
-### 4. Configure the API Key
+### 4. Configure the Gemini API Key
 
-Create a `.env` file inside the `AURA AI` folder and configure your Gemini API key using the environment variable expected by your application.
+Create a `.env` file in the project root directory and add:
 
-**Important:** Never commit your `.env` file or expose a private API key in public source code. For a publicly deployed frontend, use a secure backend to protect the API key.
+```env
+VITE_GEMINI_API_KEY=your_gemini_api_key
+```
+
+Replace `your_gemini_api_key` with your own API key.
+
+**Security:** Never commit your `.env` file to GitHub. Variables prefixed with `VITE_` can be exposed in client-side code. For production use, route Gemini API requests through a backend to protect your API key.
 
 ### 5. Start the Development Server
 
@@ -76,20 +89,20 @@ Open the local URL displayed in your terminal.
 
 ## 🏗️ Build for Production
 
-To create an optimized production build, run:
+Run the following command to create an optimized production build:
 
 ```bash
 npm run build
 ```
 
-The generated production files will be available in the `dist/` directory.
+The generated files will be available in the `dist/` directory.
 
 ## 👩‍💻 Author
 
 **Kanika Khurana**
 
-GitHub: [@Kanikakhurana18](https://github.com/Kanikakhurana18)
+- **GitHub:** [Kanikakhurana18](https://github.com/Kanikakhurana18)
 
 ## 📄 License
 
-This project is available for learning and portfolio purposes. Add a license file if you choose to distribute it under a specific open-source license.
+This project is intended for learning and portfolio purposes. No open-source license has been specified yet.
