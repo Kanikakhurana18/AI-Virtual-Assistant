@@ -8,25 +8,49 @@ function UserContext({ children }) {
     let [prompt, setPrompt] = useState("listening...")
     let [respond, setRespond] = useState(false)
 
+
     function speak(text) {
-        let text_speak = new SpeechSynthesisUtterance(text)
+        let text_speak = new SpeechSynthesisUtterance(text);
+
         text_speak.volume = 1;
         text_speak.rate = 1;
         text_speak.pitch = 1;
-        text_speak.lang = "hi-GB"
-        window.speechSynthesis.speak(text_speak)
+        text_speak.lang = "hi-GB";
+
+        text_speak.onend = () => {
+            setspeaking(false);
+            setRespond(false);
+        };
+
+        text_speak.onerror = () => {
+            setspeaking(false);
+            setRespond(false);
+        };
+
+        window.speechSynthesis.cancel();
+        window.speechSynthesis.speak(text_speak);
     }
 
     async function airesponse(prompt) {
-        let response = await run(prompt);
-        let newResponse = response.split("**") && response.split("*") && response.replace("google", "Kanika Khurana") && response.replace("Google", "Kanika Khurana")
-        setPrompt(newResponse)
-        speak(newResponse)
-        setRespond(true)
-        setTimeout(() => {
-            setspeaking(false)
-        }, 5000)
+        setRespond(true);
+        setPrompt("Thinking...");
+
+        try {
+            let response = await run(prompt);
+
+            let newResponse = response
+                .replace(/\*\*/g, "")
+                .replace(/\*/g, "")
+                .replace(/google/gi, "Kanika Khurana");
+            setPrompt(newResponse);
+            speak(newResponse);
+        } catch (error) {
+            console.error("AI response error:", error);
+            setPrompt("Sorry, I couldn't get an answer. Please try again.");
+        }
     }
+
+
 
     let speechRecognition = window.speechRecognition || window.webkitSpeechRecognition
     let recognition = speechRecognition ? new speechRecognition() : null;
@@ -59,36 +83,45 @@ function UserContext({ children }) {
         else if (command.includes("open") && command.includes("instagram")) {
             window.open("https://www.instagram.com/", "_blank")
             speak("Opening Instagram")
+            setRespond(true)
             setPrompt("Opening Instagram")
             setTimeout(() => {
                 setspeaking(false)
             }, 5000)
         }
-        else if (command.includes("time")) {
-            let time = new Date().toLocaleString(undefined,
-                { hour: "numeric", minute: "numeric" })
-            speak(time)
-            setRespond(true)
-            setPrompt(time)
-            setTimeout(() => {
-                setspeaking(false)
-            }, 5000)
-        }
         else if (command.includes("date")) {
-            let time = new Date().toLocaleString(undefined,
-                { day: "numeric", month: "short" })
-            speak(date)
-            setRespond(true)
-            setPrompt(date)
+            let date = new Date().toLocaleDateString("en-IN", {
+                day: "numeric",
+                month: "short",
+                year: "numeric"
+            });
+            setPrompt(date);
+            setRespond(true);
+            speak(date);
+
             setTimeout(() => {
-                setspeaking(false)
-            }, 5000)
+                setspeaking(false);
+                setRespond(false);
+            }, 5000);
+        }
+        else if (command.includes("time")) {
+            let time = new Date().toLocaleTimeString("en-IN", {
+                hour: "numeric",
+                minute: "2-digit",
+                hour12: true
+            });
+            setPrompt(time);
+            setRespond(true);
+            speak(time);
+            setTimeout(() => {
+                setspeaking(false);
+                setRespond(false);
+            }, 5000);
         }
         else {
             airesponse(command)
         }
     }
-
 
     let value = {
         recognition,

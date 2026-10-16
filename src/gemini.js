@@ -12,7 +12,7 @@ export async function run(prompt) {
         "You are AURA AI, a friendly, intelligent virtual assistant built by Kanika Khurana. Help users with coding, learning, productivity, and general questions. Explain things in simple language in 2-3 lines.",
       generation_config: {
         temperature: 1,
-        max_output_tokens: 2048,
+        max_output_tokens: 512,
       },
     });
 
