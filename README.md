@@ -6,9 +6,12 @@ AURA AI is an AI-powered virtual assistant built using React.js and Vite. It pro
 
 - 🎙️ Voice interaction using microphone input
 - 🤖 AI-generated responses using the Google Gemini API
-- 🔊 Speech synthesis and voice assistant animations
+- 🔊 Text-to-speech responses and voice assistant animations
+- 🌦️ Weather updates using the Open-Meteo API
+- 🕒 Current date and time using voice commands
+- 🌐 Voice commands to open YouTube, Google, and Instagram
 - 🎨 Interactive user interface with visual feedback
-- ⚡ Fast development and optimized production builds using Vite
+- ⚡ Fast development and production builds using Vite
 
 ## 🌐 Live Demo
 
@@ -18,8 +21,10 @@ AURA AI is an AI-powered virtual assistant built using React.js and Vite. It pro
 
 - **Frontend:** React.js
 - **Build Tool:** Vite
-- **Language:** JavaScript
-- **AI Integration:** Google GenAI SDK
+- **Programming Language:** JavaScript
+- **AI Integration:** Google Gemini API, Google GenAI SDK
+- **Voice Interaction:** Web Speech API (Speech Recognition and Speech Synthesis)
+- **Weather Data:** Open-Meteo API
 - **Icons:** React Icons
 - **Styling:** CSS
 - **Deployment:** Vercel
@@ -33,6 +38,7 @@ AI-Virtual-Assistant/
 ├── src/
 │   ├── assets/
 │   ├── context/
+│   │   └── UserContext.jsx
 │   ├── App.jsx
 │   ├── App.css
 │   ├── index.css
@@ -44,8 +50,6 @@ AI-Virtual-Assistant/
 ├── package-lock.json
 └── vite.config.js
 ```
-
-*Note: The structure above is illustrative. Your actual folders and files may differ.*
 
 ## 🚀 Getting Started
 
