@@ -15,7 +15,7 @@ AURA AI is an AI-powered virtual assistant built using React.js and Vite. It pro
 
 ## 📸 Screenshot
 
-![AURA AI Screenshot](./src/assets/screenshot(1).png)
+![AURA AI Screenshot](./src/assets/Screenshot(1).png)
 
 ## 🌐 Live Demo
 
